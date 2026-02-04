@@ -1,4 +1,4 @@
-name: Deploy Web to GitHub Pages
+name: Flutter Multi-Build
 on:
   push:
     branches: [ main ]
@@ -7,29 +7,22 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  build-web:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install Flutter
-        uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build Web
-        # IMPORTANT: Replace 'portfolio-flutter' with your repo name
-        run: flutter build web --release --base-href "/portfolio-flutter/"
-
+      - run: flutter pub get
+      - run: flutter build web --release --base-href "/portfolio-flutter/"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
-build-apk:
+
+  build-apk:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,8 +31,6 @@ build-apk:
           channel: 'stable'
       - run: flutter pub get
       - run: flutter build apk --release
-      
-      # This saves the APK so you can download it from GitHub
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
