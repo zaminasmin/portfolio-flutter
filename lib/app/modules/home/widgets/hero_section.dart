@@ -87,8 +87,9 @@ class _HeroTextContent extends StatelessWidget {
 
         const SizedBox(height: 30),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        Wrap(
+          spacing: 20,
+          runSpacing: 20,
           children: [
             ElevatedButton(
               onPressed: () {},
@@ -107,8 +108,6 @@ class _HeroTextContent extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ).animate().scale(delay: 600.ms),
-
-            const SizedBox(width: 20),
 
             OutlinedButton(
               onPressed: () {
@@ -145,102 +144,111 @@ class _ProfileImageStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500,
-      width: 500,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Background Glow/Circle
-          Container(
-                height: 400,
-                width: 400,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Theme.of(context).primaryColor.withOpacity(0.5),
-                    width: 2,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Theme.of(context).primaryColor.withOpacity(0.2),
-                      blurRadius: 50,
-                      spreadRadius: 10,
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: SizedBox(
+        height: 500,
+        width: 500,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // Background Glow/Circle
+            Container(
+                  height: 400,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Theme.of(context).primaryColor.withOpacity(0.5),
+                      width: 2,
                     ),
-                  ],
+                    boxShadow: [
+                      BoxShadow(
+                        color: Theme.of(context).primaryColor.withOpacity(0.2),
+                        blurRadius: 50,
+                        spreadRadius: 10,
+                      ),
+                    ],
+                  ),
+                )
+                .animate(onPlay: (controller) => controller.repeat())
+                .shimmer(
+                  duration: 3000.ms,
+                  color: Theme.of(context).primaryColor.withOpacity(0.4),
                 ),
-              )
-              .animate(onPlay: (controller) => controller.repeat())
-              .shimmer(
-                duration: 3000.ms,
-                color: Theme.of(context).primaryColor.withOpacity(0.4),
-              ),
 
-          // Profile Image
-          Container(
-            height: 350,
-            width: 350,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/images/profile.png'),
-                fit: BoxFit.cover,
-                alignment: Alignment.topCenter, // Often better for portraits
-              ),
-            ),
-          ).animate().fadeIn(duration: 1000.ms).scale(),
-
-          // Orbiting Icons (Mockups)
-          // React
-          Positioned(
-                right: 0,
-                bottom: 100,
-                child: _TechIcon(icon: Icons.code, color: Colors.blue),
-              )
-              .animate(onPlay: (controller) => controller.repeat(reverse: true))
-              .moveY(
-                begin: 0,
-                end: 20,
-                duration: 2000.ms,
-                curve: Curves.easeInOut,
-              ),
-
-          // Flutter
-          Positioned(
-                left: 0,
-                top: 100,
-                child: _TechIcon(
-                  icon: Icons.flutter_dash,
-                  color: Colors.blueAccent,
+            // Profile Image
+            Container(
+              height: 350,
+              width: 350,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/images/profile.png'),
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter, // Often better for portraits
                 ),
-              )
-              .animate(onPlay: (controller) => controller.repeat(reverse: true))
-              .moveY(
-                begin: 0,
-                end: -20,
-                duration: 2000.ms,
-                curve: Curves.easeInOut,
-                delay: 500.ms,
               ),
+            ).animate().fadeIn(duration: 1000.ms).scale(),
 
-          // Firebase
-          Positioned(
-                right: 50,
-                top: 50,
-                child: _TechIcon(
-                  icon: Icons.local_fire_department,
-                  color: Colors.orange,
+            // Orbiting Icons (Mockups)
+            // React
+            Positioned(
+                  right: 0,
+                  bottom: 100,
+                  child: _TechIcon(icon: Icons.code, color: Colors.blue),
+                )
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                )
+                .moveY(
+                  begin: 0,
+                  end: 20,
+                  duration: 2000.ms,
+                  curve: Curves.easeInOut,
                 ),
-              )
-              .animate(onPlay: (controller) => controller.repeat(reverse: true))
-              .moveX(
-                begin: 0,
-                end: 15,
-                duration: 2500.ms,
-                curve: Curves.easeInOut,
-                delay: 1000.ms,
-              ),
-        ],
+
+            // Flutter
+            Positioned(
+                  left: 0,
+                  top: 100,
+                  child: _TechIcon(
+                    icon: Icons.flutter_dash,
+                    color: Colors.blueAccent,
+                  ),
+                )
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                )
+                .moveY(
+                  begin: 0,
+                  end: -20,
+                  duration: 2000.ms,
+                  curve: Curves.easeInOut,
+                  delay: 500.ms,
+                ),
+
+            // Firebase
+            Positioned(
+                  right: 50,
+                  top: 50,
+                  child: _TechIcon(
+                    icon: Icons.local_fire_department,
+                    color: Colors.orange,
+                  ),
+                )
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                )
+                .moveX(
+                  begin: 0,
+                  end: 15,
+                  duration: 2500.ms,
+                  curve: Curves.easeInOut,
+                  delay: 1000.ms,
+                ),
+          ],
+        ),
       ),
     );
   }

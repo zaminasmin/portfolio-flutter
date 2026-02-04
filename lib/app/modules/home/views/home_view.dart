@@ -17,91 +17,93 @@ class HomeView extends GetView<HomeController> {
       body: Stack(
         children: [
           // Background - can add mesh gradient or particles here later
-          Column(
-            children: [
-              // Custom App Bar (Placeholder for now)
-              Obx(
-                () => Container(
-                  height: 80,
-                  color: controller.isscrolled.value
-                      ? Theme.of(context).cardColor.withOpacity(0.9)
-                      : Colors.transparent,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(left: 30),
-                        child: Text(
-                          "< Portfolio />",
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+          SafeArea(
+            child: Column(
+              children: [
+                // Custom App Bar (Placeholder for now)
+                Obx(
+                  () => Container(
+                    height: 80,
+                    color: controller.isscrolled.value
+                        ? Theme.of(context).cardColor.withOpacity(0.9)
+                        : Colors.transparent,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(left: 30),
+                          child: Text(
+                            "< Portfolio />",
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      if (Get.width > 800) // Desktop Menu
-                        Row(
-                          children: [
-                            TextButton(
-                              onPressed: () => controller.scrollToSection(
-                                controller.homeKey,
+                        if (Get.width > 800) // Desktop Menu
+                          Row(
+                            children: [
+                              TextButton(
+                                onPressed: () => controller.scrollToSection(
+                                  controller.homeKey,
+                                ),
+                                child: const Text("Home"),
                               ),
-                              child: const Text("Home"),
-                            ),
-                            TextButton(
-                              onPressed: () => controller.scrollToSection(
-                                controller.aboutKey,
+                              TextButton(
+                                onPressed: () => controller.scrollToSection(
+                                  controller.aboutKey,
+                                ),
+                                child: const Text("About"),
                               ),
-                              child: const Text("About"),
-                            ),
-                            TextButton(
-                              onPressed: () => controller.scrollToSection(
-                                controller.skillsKey,
+                              TextButton(
+                                onPressed: () => controller.scrollToSection(
+                                  controller.skillsKey,
+                                ),
+                                child: const Text("Skills"),
                               ),
-                              child: const Text("Skills"),
-                            ),
-                            TextButton(
-                              onPressed: () => controller.scrollToSection(
-                                controller.projectsKey,
+                              TextButton(
+                                onPressed: () => controller.scrollToSection(
+                                  controller.projectsKey,
+                                ),
+                                child: const Text("Projects"),
                               ),
-                              child: const Text("Projects"),
-                            ),
-                            const SizedBox(width: 30),
-                          ],
-                        )
-                      else // Mobile Menu Icon
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.menu),
-                        ),
-                    ],
+                              const SizedBox(width: 30),
+                            ],
+                          )
+                        else // Mobile Menu Icon
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.menu),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
 
-              // Scrollable Content
-              Expanded(
-                child: SingleChildScrollView(
-                  controller: controller.scrollController,
-                  child: Column(
-                    children: [
-                      HeroSection(key: controller.homeKey),
-                      const SizedBox(height: 100),
+                // Scrollable Content
+                Expanded(
+                  child: SingleChildScrollView(
+                    controller: controller.scrollController,
+                    child: Column(
+                      children: [
+                        HeroSection(key: controller.homeKey),
+                        const SizedBox(height: 100),
 
-                      AboutSection(key: controller.aboutKey),
+                        AboutSection(key: controller.aboutKey),
 
-                      ExperienceSection(),
+                        ExperienceSection(),
 
-                      SkillsSection(key: controller.skillsKey),
+                        SkillsSection(key: controller.skillsKey),
 
-                      ProjectsSection(key: controller.projectsKey),
+                        ProjectsSection(key: controller.projectsKey),
 
-                      ContactSection(key: controller.contactKey),
-                    ],
+                        ContactSection(key: controller.contactKey),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
