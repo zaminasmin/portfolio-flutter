@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controllers/home_controller.dart';
+import 'particle_background.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -15,28 +16,38 @@ class HeroSection extends StatelessWidget {
       builder: (context, constraints) {
         bool isMobile = constraints.maxWidth < 800;
 
-        return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(
-            horizontal: isMobile ? 20 : 80,
-            vertical: isMobile ? 40 : 100,
-          ),
-          child: isMobile
-              ? Column(
-                  children: [
-                    const _ProfileImageStack(),
-                    const SizedBox(height: 40),
-                    const _HeroTextContent(),
-                  ],
-                )
-              : Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Expanded(child: _HeroTextContent()),
-                    const SizedBox(width: 40),
-                    const Expanded(child: _ProfileImageStack()),
-                  ],
-                ),
+        return Stack(
+          children: [
+            const Positioned.fill(
+              child: ParticleBackground(
+                numberOfParticles: 150,
+                particleColor: Colors.blueAccent,
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                horizontal: isMobile ? 20 : 80,
+                vertical: isMobile ? 40 : 100,
+              ),
+              child: isMobile
+                  ? Column(
+                      children: [
+                        const _ProfileImageStack(),
+                        const SizedBox(height: 40),
+                        const _HeroTextContent(),
+                      ],
+                    )
+                  : Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Expanded(child: _HeroTextContent()),
+                        const SizedBox(width: 40),
+                        const Expanded(child: _ProfileImageStack()),
+                      ],
+                    ),
+            ),
+          ],
         );
       },
     );

@@ -9,7 +9,7 @@ import '../widgets/projects_section.dart';
 import '../widgets/contact_section.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({super.key});
+   HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,9 @@ class HomeView extends GetView<HomeController> {
                       children: [
                         HeroSection(key: controller.homeKey),
                         const SizedBox(height: 100),
-
+TextButton(onPressed: () {
+  fnTest();
+}, child:Text("SSSs")),
                         AboutSection(key: controller.aboutKey),
 
                         ExperienceSection(),
@@ -108,5 +110,24 @@ class HomeView extends GetView<HomeController> {
         ],
       ),
     );
+  }
+
+  TestClass ss=TestClass();
+  TestClass ss2=TestClass();
+   TestClass ss3=TestClass();
+  fnTest(){
+    ss.a=1;
+    ss2.a=100;
+    print(ss.a);
+    print(ss2.a);
+  ss2.fnDisplay();
+  }
+
+}
+class TestClass {
+  int a=2;
+  int b=3;
+  fnDisplay(){
+    print(a);
   }
 }

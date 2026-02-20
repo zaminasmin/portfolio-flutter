@@ -26,7 +26,7 @@ class PortfolioApp extends StatelessWidget {
       title: 'Portfolio',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
-      home: const HomeView(),
+      home:  HomeView(),
       // initialRoute: AppPages.INITIAL,
       // getPages: AppPages.routes,
     );

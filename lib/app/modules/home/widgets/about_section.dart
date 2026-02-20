@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'particle_background.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -8,26 +9,38 @@ class AboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
       color: const Color(
         0xFF0F172A,
       ), // Slightly lighter background for contrast
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          final isMobile = constraints.maxWidth < 800;
-
-          return Center(
-            child: Container(
-              constraints: const BoxConstraints(maxWidth: 1000),
-              child: isMobile
-                  ? Column(children: _buildContent(context))
-                  : Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: _buildContent(context, isRow: true),
-                    ),
+      child: Stack(
+        children: [
+          const Positioned.fill(
+            child: ParticleBackground(
+              numberOfParticles: 100,
+              particleColor: Colors.blueGrey,
             ),
-          );
-        },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final isMobile = constraints.maxWidth < 800;
+
+                return Center(
+                  child: Container(
+                    constraints: const BoxConstraints(maxWidth: 1000),
+                    child: isMobile
+                        ? Column(children: _buildContent(context))
+                        : Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: _buildContent(context, isRow: true),
+                          ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

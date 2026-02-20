@@ -57,9 +57,85 @@ class ProjectsSection extends GetView<HomeController> {
   // Temporary Mock Data until Firebase is connected
   List<ProjectModel> _getMockProjects() {
     return [
+      // BEAMS IT Solutions Projects
+      ProjectModel(
+        id: '1',
+        title: 'Wallop',
+        description:
+            'Amusement Park ERP with RFID \'Tap-to-Play\' & Booking Engine.',
+        imageUrl: 'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Wallop',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'RFID', 'ERP'],
+      ),
+      ProjectModel(
+        id: '2',
+        title: 'Beams Gas',
+        description:
+            'Utility platform with Sunmi integration & offline logistics.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Beams+Gas',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'Sunmi', 'Offline'],
+      ),
+      ProjectModel(
+        id: '3',
+        title: 'Beams Mobility',
+        description: 'C-Suite Executive Dashboards with real-time analytics.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Beams+Mobility',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'Analytics', 'Dashboard'],
+      ),
+      ProjectModel(
+        id: '4',
+        title: 'Beams ESS',
+        description: 'Biometric clock-in & HR management for 500+ staff.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Beams+ESS',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'Biometric', 'HR'],
+      ),
+      ProjectModel(
+        id: '5',
+        title: 'Beams Trade',
+        description: 'Warehouse automation via PDA/Barcode scanners.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Beams+Trade',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'PDA', 'Barcode'],
+      ),
+      ProjectModel(
+        id: '6',
+        title: 'Beams Bistro',
+        description: 'Full-service Restaurant POS with KOT & Split Payments.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Beams+Bistro',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'POS', 'GetX'],
+      ),
+      ProjectModel(
+        id: '7',
+        title: 'Price Check',
+        description: 'Instant retail inventory lookup tool.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Price+Check',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'Retail', 'Inventory'],
+      ),
+
       // SISSCOL Infosolutions
       ProjectModel(
         id: '8',
+        title: 'Smart Labour',
+        description:
+            'Hybrid marketplace for skilled labor bidding and property hunting (Rent/Sale).',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Smart+Labour',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Flutter', 'Marketplace', 'Bidding'],
+      ),
+      ProjectModel(
+        id: '9',
         title: 'Paynback',
         description:
             'Fintech rewards wallet with QR payments and IoT Soundbox integration for real-time audio announcements.',
