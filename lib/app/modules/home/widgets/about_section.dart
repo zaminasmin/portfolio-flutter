@@ -61,7 +61,7 @@ class AboutSection extends StatelessWidget {
         const SizedBox(height: 20),
 
         Text(
-          "I am a Lead Flutter Developer with over 4 years of experience building production-grade ERP, logistics, and delivery applications. I specialize in architecting scalable systems using MVVM and Clean Architecture, and I have a proven track record of taking end-to-end ownership of the entire Software Development Lifecycle (SDLC). \n\nMy expertise includes integrating complex hardware like RFID, OCR, and thermal printers into mobile ecosystems. Currently, I am expanding my skillset into DevOps, leveraging my hands-on experience with CI/CD pipelines, TDD, and automated deployment to bridge the gap between mobile engineering and cloud infrastructure. Based in the UAE and currently pursuing an MCA, I am a growth-oriented engineer dedicated to building high-quality, automated, and user-centric software.",
+          "I am a Lead Flutter Developer with over 4 years of experience building production-grade ERP, logistics, and delivery applications. With a strong foundation in software engineering fundamentals, I have fully embraced the new paradigm of 'vibe coding' and AI-assisted engineering. \n\nBy leveraging advanced AI agents like Antigravity and Cursor, I am no longer limited by specific programming languages. If a project requires a new tech stack or language, I can rapidly adapt, write, and deploy it using these AI tools. This workflow has empowered me to architect and launch 4 new applications entirely through AI collaboration. \n\nWhether bridging complex hardware systems (RFID, IoT, POS) with mobile ecosystems or exploring uncharted technologies, I focus on delivering high-impact solutions. Based in the UAE and currently pursuing my MCA, I am an engineer driven by results and scalable architecture, not syntax.",
           style: GoogleFonts.inter(
             fontSize: 16, // Slightly smaller to fit more text
             height: 1.6,
@@ -110,11 +110,11 @@ class AboutSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        _StatItem(label: "Years Experience", value: "4+"),
+        _StatItem(label: "Experience", value: "4+ Yrs"),
         const SizedBox(width: 30),
-        _StatItem(label: "Production Apps", value: "10+"),
+        _StatItem(label: "Deployed", value: "10+ Apps"),
         const SizedBox(width: 30),
-        _StatItem(label: "Domains", value: "5+"),
+        _StatItem(label: "Vibe Coded Apps", value: "4"),
       ],
     );
   }

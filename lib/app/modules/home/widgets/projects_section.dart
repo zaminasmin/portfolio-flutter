@@ -57,12 +57,44 @@ class ProjectsSection extends GetView<HomeController> {
   // Temporary Mock Data until Firebase is connected
   List<ProjectModel> _getMockProjects() {
     return [
+      // Vibe Coded Apps (Created with AI)
+      ProjectModel(
+        id: 'ai_1',
+        title: 'Full-Stack Web App',
+        description:
+            'Vibe coded a complete backend and frontend in an unfamiliar tech stack using Antigravity, translating my core engineering fundamentals into working code.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/A855F7.png?text=Vibe+Coding',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Antigravity', 'Agentic AI', 'Any Language'],
+      ),
+      ProjectModel(
+        id: 'ai_2',
+        title: 'Data & Analytics Tool',
+        description:
+            'Built a complex data processing application by collaborating with Cursor. Leveraged AI to write the syntax while I directed the architecture and logic.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/3B82F6.png?text=Cursor+IDE',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Cursor', 'Prompt Eng', 'Vibe Coding'],
+      ),
+      ProjectModel(
+        id: 'ai_3',
+        title: 'Automated Scripting Utilities',
+        description:
+            'Generated multi-step deployment and automation pipelines using Codex, entirely bypassing the need to learn the underlying scripting language.',
+        imageUrl:
+            'https://placehold.co/600x400/1E293B/10B981.png?text=AI+Assisted',
+        link: 'mailto:zaminasmin111@gmail.com',
+        techStack: ['Codex', 'Automations', 'Language Agnostic'],
+      ),
+
       // BEAMS IT Solutions Projects
       ProjectModel(
         id: '1',
         title: 'Wallop',
         description:
-            'Amusement Park ERP with RFID \'Tap-to-Play\' & Booking Engine.',
+            'Engineered Amusement Park ERP processing 10k+ daily visitors with RFID \'Tap-to-Play\' & high-throughput Booking Engine.',
         imageUrl: 'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Wallop',
         link: 'mailto:zaminasmin111@gmail.com',
         techStack: ['Flutter', 'RFID', 'ERP'],
@@ -71,7 +103,7 @@ class ProjectsSection extends GetView<HomeController> {
         id: '2',
         title: 'Beams Gas',
         description:
-            'Utility platform with Sunmi integration & offline logistics.',
+            'Optimized offline logistics via Sunmi integration, improving delivery efficiency by 40% for gas utility agents.',
         imageUrl:
             'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Beams+Gas',
         link: 'mailto:zaminasmin111@gmail.com',
@@ -80,7 +112,8 @@ class ProjectsSection extends GetView<HomeController> {
       ProjectModel(
         id: '3',
         title: 'Beams Mobility',
-        description: 'C-Suite Executive Dashboards with real-time analytics.',
+        description:
+            'Developed C-Suite Dashboards delivering real-time analytics to executive boards, accelerating data-driven decisions.',
         imageUrl:
             'https://placehold.co/600x400/1E293B/FFFFFF.png?text=Beams+Mobility',
         link: 'mailto:zaminasmin111@gmail.com',

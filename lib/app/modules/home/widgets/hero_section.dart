@@ -64,7 +64,7 @@ class _HeroTextContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Hello, I am",
+          "Lead Mobile Development & AI",
           style: GoogleFonts.inter(
             fontSize: 20,
             color: Theme.of(context).primaryColor,
@@ -77,7 +77,7 @@ class _HeroTextContent extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            "MUHAMMED ZAMIN ASMIN />",
+            "MUHAMMED ZAMIN ASMIN.",
             textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.displayLarge?.copyWith(
               height: 1.1,
@@ -90,7 +90,7 @@ class _HeroTextContent extends StatelessWidget {
         const SizedBox(height: 10),
 
         Text(
-          "Full Stack Flutter Developer",
+          "Building production-grade ecosystems and vibe coding language-agnostic apps using Antigravity and Cursor.",
           style: Theme.of(
             context,
           ).textTheme.headlineSmall?.copyWith(color: Colors.white70),
